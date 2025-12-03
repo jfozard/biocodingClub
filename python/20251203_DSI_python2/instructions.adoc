@@ -257,7 +257,7 @@ os.path.isdir("collected_data")
 
 ----
 
-
+=== Challenge
 [source,python]
 ----
 ## Challenge 1: Change your working directory to a different folder
@@ -436,10 +436,9 @@ metadata_copy["gender"].str.upper()
 metadata_copy["gender"] = metadata_copy["gender"].str.upper()
 # Now the column only contains M and F
 metadata_copy["gender"].unique()
-
+----
 
 === Challenge
-----
 
 [source,python]
 ----
@@ -505,10 +504,9 @@ plt.xlabel("Gender")
 plt.ylabel("Number of subjects")
 plt.title("Number of subjects by gender")
 
----
+----
 
 === Challenge
-----
 
 [source,python]
 ----
