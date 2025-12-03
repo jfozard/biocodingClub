@@ -184,6 +184,8 @@ not (1==2)
 
 
 ----
+
+
 === Challenge
 [source,python]
 ----
@@ -214,6 +216,7 @@ else:
     print("x is not 10")
 
 ----
+====
 
 == Using libraries
 
