@@ -59,7 +59,8 @@ for name in ["Ada", "Bob", "Kris"]:
     print("Hello ", name)
 print("There are ", count, " people present")
 
----
+----
+
 === Challenge
 
 [source,python]
