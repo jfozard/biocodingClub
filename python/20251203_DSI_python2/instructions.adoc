@@ -2,20 +2,20 @@
 
 == Recap of previous session
 
-Arithmetic
+=== Arithmetic
 [source,python]
 ----
 123/456
 ----
 
-Variables
+=== Variables
 [source,python]
 ----
 z = 2
 z + z
 ----
 
-Data types - Lists, Strings and Dictionaries
+=== Data types - Lists, Strings and Dictionaries
 [source,python]
 ----
 l = [1, 2, "a"]
@@ -26,7 +26,7 @@ d = { "apple":10, "pear":2}
 d["apple"]
 ----
 
-Functions
+=== Functions
 [source,python]
 ----
 def f(x):
@@ -39,7 +39,7 @@ f(2)
 
 == Loops (again)
 
-Loops
+
 [source,python]
 ----
 for i in range(10):
@@ -61,6 +61,7 @@ print("There are ", count, " people present")
 
 ---
 === Challenge
+
 [source,python]
 ----
 # Summing a list
@@ -365,7 +366,6 @@ metadata.loc[2]
 
 == Pandas: Working with data
 [source,python]
-
 ----
 # You can get an overview of a single column
 metadata['age'].describe()
