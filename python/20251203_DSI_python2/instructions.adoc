@@ -221,86 +221,6 @@ else:
 == Using libraries
 
 
-=== Files and directories
-
-[source,python]
-----
-# You can import libraries with functions that allow you to do specific tasks.
-# Related phrases you may have heard include packages and modules.
-# There are subtle differences between these terms in python, but don't worry about them for now.
-
-# Python has several standard libraries that are already installed
-# Import the os library - this library allows python to interact with your operating system
-import os
-
-# This allows you to list all the files/folders in a specified folder (dir/directory) 
-# (or your current working directory if not specified)
-os.listdir()
-
-# You an specify a folder
-os.listdir("20251203_DSI_python2")
-
-# You can use slashes to indicate subfolders
-# Notice that Python uses forward slashes (/) when indicating folders,
-# whereas Windows use backward slashes (\)
-# If you copied your folder path from Windows, remember to change the slashes
-os.listdir("20251203_DSI_python2/example_data")
-
-# You can also change your working directory
-# Once you have changed your working directory, 
-# this folder becomes your point of reference
-os.chdir("20251203_DSI_python2/example_data")
-os.listdir()
-
-# You can check if something is a file or a folder (dir/directory)
-os.path.isdir("collected_data")
-
-----
-
-=== Challenge
-[source,python]
-----
-## Challenge 1: Change your working directory to a different folder
-
-## Challenge 2: List files/folders in a folder
-
-## Challenge 3: Download the example_data folder as a zip file and extract it.
-# Print out the names of all files/folders at the second level within  example_data/collected_data
-# The data for each day is within a separate subfolder
-# e.g. collected_data/day1/data1.csv, collected_data/day1/data2.csv etc.
-
-----
-
-.Answer
-[%collapsible]
-====
-
-[source,python]
-----
-## Challenge 3:
-
-# Assumes we are in biocodingClub/python/20251203_DSI_python2/example_data
-# Folder for looping through 
-
-main_folder = "collected_data"
-# list the directories in your folder
-filefolder_list = os.listdir(main_folder)# Loop through the files within each folder (dir/directory)
-for filefolder in filefolder_list:
-    # Add the path from your folder to form the full path for each of the file/subfolder
-    filefolder_path = main_folder + "/" + filefolder # or os.path.join(main_folder, filefolder)
-    
-
-    # Check if this is a file or a folder
-    # Only perform the following if it is a folder
-    if os.path.isdir(filefolder_path):
-        # Find out what files are in the subfolder referred to in the current loop
-        files_in_subfolder = os.listdir(filefolder_path)
-        # Go through each of these files and print them out
-        for current_file in files_in_subfolder:
-            # Add the file path from your folder to form the full file path for each of the subfolder
-            print(filefolder_path+"/" +current_file)
-----
-====
 
 == Pandas: loading and processing data
 [source,python]
@@ -534,5 +454,87 @@ plt.xlabel("Gender")
 plt.ylabel("Mean age")
 plt.title("Mean age by gender")
 plt.show()
+----
+====
+
+
+=== Files and directories
+
+[source,python]
+----
+# You can import libraries with functions that allow you to do specific tasks.
+# Related phrases you may have heard include packages and modules.
+# There are subtle differences between these terms in python, but don't worry about them for now.
+
+# Python has several standard libraries that are already installed
+# Import the os library - this library allows python to interact with your operating system
+import os
+
+# This allows you to list all the files/folders in a specified folder (dir/directory) 
+# (or your current working directory if not specified)
+os.listdir()
+
+# You an specify a folder
+os.listdir("20251203_DSI_python2")
+
+# You can use slashes to indicate subfolders
+# Notice that Python uses forward slashes (/) when indicating folders,
+# whereas Windows use backward slashes (\)
+# If you copied your folder path from Windows, remember to change the slashes
+os.listdir("20251203_DSI_python2/example_data")
+
+# You can also change your working directory
+# Once you have changed your working directory, 
+# this folder becomes your point of reference
+os.chdir("20251203_DSI_python2/example_data")
+os.listdir()
+
+# You can check if something is a file or a folder (dir/directory)
+os.path.isdir("collected_data")
+
+----
+
+=== Challenge
+[source,python]
+----
+## Challenge 1: Change your working directory to a different folder
+
+## Challenge 2: List files/folders in a folder
+
+## Challenge 3: Download the example_data folder as a zip file and extract it.
+# Print out the names of all files/folders at the second level within  example_data/collected_data
+# The data for each day is within a separate subfolder
+# e.g. collected_data/day1/data1.csv, collected_data/day1/data2.csv etc.
+
+----
+
+.Answer
+[%collapsible]
+====
+
+[source,python]
+----
+## Challenge 3:
+
+# Assumes we are in biocodingClub/python/20251203_DSI_python2/example_data
+# Folder for looping through 
+
+main_folder = "collected_data"
+# list the directories in your folder
+filefolder_list = os.listdir(main_folder)# Loop through the files within each folder (dir/directory)
+for filefolder in filefolder_list:
+    # Add the path from your folder to form the full path for each of the file/subfolder
+    filefolder_path = main_folder + "/" + filefolder # or os.path.join(main_folder, filefolder)
+    
+
+    # Check if this is a file or a folder
+    # Only perform the following if it is a folder
+    if os.path.isdir(filefolder_path):
+        # Find out what files are in the subfolder referred to in the current loop
+        files_in_subfolder = os.listdir(filefolder_path)
+        # Go through each of these files and print them out
+        for current_file in files_in_subfolder:
+            # Add the file path from your folder to form the full file path for each of the subfolder
+            print(filefolder_path+"/" +current_file)
 ----
 ====
